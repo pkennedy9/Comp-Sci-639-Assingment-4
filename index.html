@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<h1 class="header" id="header1" style="background-color: #DFCFBE;font-size:xx-large">Visualizing Life Expectancy</h1>
+
+
+<style>
+  @media screen and (max-width: 480px) .post-single {
+    font-size: 14px;
+    line-height: 1.6em;
+  }
+
+  @media screen and (max-width: 768px) .post-single {
+    font-size: 16px;
+  }
+
+  .post-single {
+    font-size: 17px;
+    line-height: 1.75em;
+  }
+
+  @media screen and (max-width: 480px) .post-single {
+    font-size: 14px;
+    line-height: 1.6em;
+  }
+
+  @media screen and (max-width: 768px) .post-single {
+    font-size: 16px;
+  }
+
+  .post-single {
+    font-size: 17px;
+    line-height: 1.75em;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+
+  .container {
+    float: left;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .column {
+    flex: 50%;
+  }
+
+  .pushdown {
+    padding-bottom: 255px;
+  }
+
+  .center {
+    margin: auto;
+    width: 40%;
+    padding: 1px;
+  }
+</style>
+
+<body style="background-color: #DFCFBE;">
+  <div class="row">
+    <div class="column" id="map1">
+      <div class="post-single">
+        <p class=" text" id="intro" style="background-color: #DFCFBE;text-align: left"> This visualization
+          consits of a
+          dropdown box and an
+          interactive map where the user can
+          select different
+          features that they wish to see presented on the map. Once you select a feature, the map will change to be
+          linked
+          with that feature. The different shades of each country represents its feature value -
+          with
+          higher values corresponding with a darker shade of blue. As the user hovers over each country, the feature
+          value
+          will
+          populate. There are seven features to choose from: Life Expectancy, Diphtheria immunization, Hepatitis B
+          immunization,
+          Polio immunization, average BMI, and
+          GDP.
+        </p>
+        <p class=" text" id="intro" style="background-color: #DFCFBE;text-align: left"><strong>Note:</strong> Diphtheria
+          immunization, Hepatitis B
+          immunization, and Polio immunization are expressed as a percentage out of 100.</p>
+      </div>
+      <div class="center">
+        <label id="label1" style="background-color: #DFCFBE;">Select a feature: </label>
+        <select id="selectButton1">
+          <option value="life_expectancy">Life Expectancy</option>
+          <option value="diphtheria">Diphtheria</option>
+          <option value="hepatitis_b">Hepatitis B</option>
+          <option value="polio">Polio</option>
+          <option value="bmi">BMI</option>
+          <option value="gdp">GDP</option>
+        </select>
+      </div>
+
+      <script src="http://d3js.org/d3.v4.min.js"></script>
+      <script src="http://d3js.org/queue.v1.min.js"></script>
+      <script src="http://d3js.org/topojson.v1.min.js"></script>
+      <script src="d3-tip.js"></script>
+      <br></br>
+      <script id="map1" src="d3-draw-map.js"></script>
+
+    </div>
+    <div class="column" id="test">
+      <div class="post-single">
+        <p class="text" id="second" style="background-color: #DFCFBE;text-align: left"> This graph plots the correlation
+          between the
+          selected feature and life expectancy. We included this plot to see if there are any inights that can help show
+          how
+          life expectancy relates to the different variables above.
+        </p>
+
+
+      </div>
+      <div class="pushdown">
+      </div>
+      <div class="center">
+        <label id="label2" style="background-color: #DFCFBE;">Select a feature: </label>
+        <select id="selectButton2">
+          <option value="life_expectancy">Life Expectancy</option>
+          <option value="diphtheria">Diphtheria</option>
+          <option value="hepatitis_b">Hepatitis B</option>
+          <option value="polio">Polio</option>
+          <option value="bmi">BMI</option>
+          <option value="gdp">GDP</option>
+        </select>
+      </div>
+      <script id="test" src="plots.js"></script>
+      <div class="center">
+        <label id="label2" style="background-color: #DFCFBE;">Select a feature: </label>
+        <select id="selectButton3">
+          <option value="life_expectancy">Life Expectancy</option>
+          <option value="diphtheria">Diphtheria</option>
+          <option value="hepatitis_b">Hepatitis B</option>
+          <option value="polio">Polio</option>
+          <option value="bmi">BMI</option>
+          <option value="gdp">GDP</option>
+        </select>
+      </div>
+      <script id="test" src="plots-2.js"></script>
+
+      <br>
+      </br>
+    </div>
+  </div>
+
+</body>
+
+
+
+</html>
